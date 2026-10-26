@@ -14,16 +14,16 @@ las sinopsis de 1000 series.
 
 ## Cómo funciona
 
-1. **Datos.** Se comienza con un dataset de series de TMDB (Kaggle). Del cual se filtran las
+1. **Datos:** Se comienza con un dataset de series de TMDB (Kaggle). Del cual se filtran las
    series animadas más votadas (en este caso se dejaron 1000) y sus sinopsis se descargan en español
    desde la API de TMDB.
-2. **Carga.** Cada una de las series se guarda en una colección de Weaviate. El servicio de
+2. **Carga:** Cada una de las series se guarda en una colección de Weaviate. El servicio de
    embeddings de Weaviate Cloud convierte el título, la sinopsis y los géneros
    en un vector.
-3. **Búsqueda.** El buscador usa una búsqueda **híbrida**, es decir vectorial + palabras
+3. **Búsqueda:** El buscador usa una búsqueda **híbrida**, es decir vectorial + palabras
    clave, por lo que sirve tanto para escribir un título como para describir
    una trama. Contiene filtros por año y por calificación mínima.
-4. **Series parecidas.** Cada resultado tiene un botón que usa los vectores para
+4. **Series parecidas:** Cada resultado tiene un botón que usa los vectores para
    recomendar series similares.
 
 **Tecnologías:** Python, Weaviate Cloud, FastAPI, HTML, CSS y JavaScript.
@@ -38,7 +38,7 @@ las sinopsis de 1000 series.
 ### 1. Clonar e instalar
 
 ```bash
-git clone <URL-del-repositorio>
+git clone <https://github.com/AlissonPaez/series-animadas.git>
 cd series-animadas
 python -m venv venv
 ```
@@ -47,6 +47,16 @@ Activar el entorno virtual:
 
 - Windows (PowerShell): `.\venv\Scripts\Activate.ps1`
 - macOS / Linux: `source venv/bin/activate`
+
+
+### Solución de problemas
+
+Si PowerShell dice que la ejecución de scripts está deshabilitada al activar el
+entorno virtual. Ejecuta esto una sola vez y vuelve a intentarlo:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
 
 Instalar las dependencias:
 
