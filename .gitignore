@@ -1,0 +1,11 @@
+# Entorno y credenciales
+venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# CSV grande original (el filtrado data/series_animadas.csv sí se sube)
+data/raw/TMDB_tv_dataset_v3.csv
+

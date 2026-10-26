@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Series animadas · Buscador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="barra">
+    <a class="marca" href="index.html">RINCON ANIMADO</a>
+  </header>
+
+  <main class="contenedor">
+    <section class="portada">
+      <h1>Encuentra tu próxima serie animada</h1>
+      <p>Escribe un título o cuenta de qué trata la serie con tus propias palabras.</p>
+
+      <form id="form-busqueda" class="buscador" role="search">
+        <input id="consulta" type="search" autocomplete="off"
+               placeholder="Ej.: un joven que sueña con ser el mejor ninja"
+               aria-label="Buscar series">
+        <button type="submit" class="boton">Buscar</button>
+      </form>
+
+      <div class="filtros">
+        <label>Desde el año
+          <input id="anio-desde" type="number" min="1950" max="2026" placeholder="1950">
+        </label>
+        <label>Hasta el año
+          <input id="anio-hasta" type="number" min="1950" max="2026" placeholder="2026">
+        </label>
+        <label>Calificación mínima
+          <select id="rating-min">
+            <option value="0">Cualquiera</option>
+            <option value="5">5 o más</option>
+            <option value="6">6 o más</option>
+            <option value="7">7 o más</option>
+            <option value="8">8 o más</option>
+            <option value="9">9 o más</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section>
+      <div class="encabezado-seccion">
+        <h2 id="titulo-seccion">Series más populares</h2>
+        <button id="limpiar" class="boton boton--suave" type="button" hidden>Volver a las populares</button>
+      </div>
+      <p id="estado" class="estado" role="status"></p>
+      <div id="resultados" class="grid"></div>
+      <div class="centro">
+        <button id="ver-mas" class="boton" type="button" hidden>Ver más</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modal">
+    <div class="modal__contenido">
+      <div class="encabezado-seccion">
+        <h2 id="modal-titulo"></h2>
+        <button id="modal-cerrar" class="boton boton--suave" type="button">Cerrar</button>
+      </div>
+      <p id="modal-estado" class="estado"></p>
+      <div id="modal-resultados" class="grid grid--modal"></div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
